@@ -2,7 +2,7 @@ module "redis" {
     source                     = "git::https://github.com/cloudposse/terraform-aws-elasticache-redis.git?ref=0.14.0"
     availability_zones         = var.availability_zones
     namespace                  = var.namespace
-    stage                      = var.env
+    stage                      = lookup(var.short_env, var.env, "dev")
     name                       = var.name
     zone_id                    = var.zone_id
     vpc_id                     = var.vpc_id
