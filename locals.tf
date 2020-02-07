@@ -5,5 +5,5 @@ resource "random_string" "str" {
 }
 
 locals {
-  name = "${var.project}-${lookup(var.short_env, var.env, "noenv")}-${random_string.str.result}"
+  uniq = "${lookup(var.short_env, var.env, "noenv")}-${random_string.str.result}"
 }
