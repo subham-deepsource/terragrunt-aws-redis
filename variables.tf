@@ -192,7 +192,7 @@ variable "tags" {
 variable "transit_encryption_enabled" {
   type        = bool
   description = "Enable TLS"
-  default     = true
+  default     = false 
 }
 variable "use_existing_security_groups" {
   type        = bool
