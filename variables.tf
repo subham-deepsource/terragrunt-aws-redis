@@ -107,7 +107,6 @@ variable "enabled" {
 variable "engine_version" {
   type        = string
   description = "Redis engine version"
-  default     = "5.0.6"
 }
 variable "existing_security_groups" {
   type        = list(string)
