@@ -116,7 +116,6 @@ variable "existing_security_groups" {
 variable "family" {
   type        = string
   description = "Redis family"
-  default     = "redis5.0"
 }
 variable "instance_type" {
   type        = string
