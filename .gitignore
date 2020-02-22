@@ -1,2 +1,4 @@
 .terraform
 .idea
+.secret
+.terraform-cache

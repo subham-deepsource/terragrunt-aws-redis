@@ -10,6 +10,14 @@ https://github.com/cloudposse/terraform-aws-elasticache-redis
 
 See their documentation for supported parameters. 
 
+For engine version see:  
+
+https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/supported-engine-versions.html
+
+AWS CLI :
+
+https://docs.aws.amazon.com/cli/latest/reference/elasticache/index.html
+
 ## Providers
 
 | Name | Version |
@@ -40,10 +48,10 @@ See their documentation for supported parameters.
 | cluster\_size | Number of nodes in cluster | `number` | `1` | no |
 | delimiter | Delimiter between `name`, `namespace`, `stage` and `attributes` | `string` | `"-"` | no |
 | enabled | Set to false to prevent the module from creating any resources | `bool` | `true` | no |
-| engine\_version | Redis engine version | `string` | `"5.0.6"` | no |
+| engine\_version | Redis engine version | `string` | n/a | yes |
 | env | Stage (e.g. `prod`, `dev`, `staging`) | `string` | `"dev"` | no |
 | existing\_security\_groups | List of existing Security Group IDs to place the cluster into. Set `use_existing_security_groups` to `true` to enable using `existing_security_groups` as Security Groups for the cluster | `list(string)` | <pre>[<br>  ""<br>]<br></pre> | no |
-| family | Redis family | `string` | `"redis5.0"` | no |
+| family | Redis family | `string` | n/a | yes |
 | instance\_type | Elastic cache instance type | `string` | `"cache.t3.micro"` | no |
 | maintenance\_window | Maintenance window | `string` | `"wed:03:00-wed:04:00"` | no |
 | name | Name of the application | `string` | n/a | yes |
@@ -58,7 +66,7 @@ See their documentation for supported parameters.
 | snapshot\_window | The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster. | `string` | `"06:30-07:30"` | no |
 | subnets | Subnet IDs | `list(string)` | n/a | yes |
 | tags | Additional tags (map of string) | `map(string)` | `{}` | no |
-| transit\_encryption\_enabled | Enable TLS | `bool` | `true` | no |
+| transit\_encryption\_enabled | Enable TLS | `bool` | `false` | no |
 | use\_existing\_security\_groups | Flag to enable/disable creation of Security Group in the module. Set to `true` to disable Security Group creation and provide a list of existing security Group IDs in `existing_security_groups` to place the cluster into | `bool` | `false` | no |
 | vpc\_id | VPC ID | `string` | n/a | yes |
 | zone\_id | Route53 DNS Zone ID | `string` | `""` | no |
