@@ -192,7 +192,7 @@ variable "tags" {
 variable "transit_encryption_enabled" {
   type        = bool
   description = "Enable TLS"
-  default     = false 
+  default     = false
 }
 variable "use_existing_security_groups" {
   type        = bool
@@ -242,4 +242,9 @@ variable "account_prefix" {
   type        = string
   description = "Short code to describe account purpose"
   default     = "sub"
+}
+
+variable "sns_topic_arn" {
+  type        = string
+  description = "SNS topic ARN for cloudwatch"
 }
