@@ -20,7 +20,8 @@ module "redis" {
   tags                         = var.tags
   alarm_memory_threshold_bytes = var.alarm_memory_threshold_bytes
   alarm_cpu_threshold_percent  = var.alarm_cpu_threshold_percent
-  alarm_actions                = [var.sns_topic_arn]
+  alarm_actions                = [ var.sns_topic_arn ]
+  ok_actions                   = [ var.sns_topic_arn ]
 }
 
 // add additionnal cloudwatch alert here
